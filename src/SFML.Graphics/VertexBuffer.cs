@@ -14,7 +14,7 @@ namespace SFML.Graphics
     /// Unlike SFML.VertexArray, the vertex data is stored in graphics memory.
     /// </summary>
     ////////////////////////////////////////////////////////////
-    public class VertexBuffer : ObjectBase, Drawable
+    public class VertexBuffer : ObjectBase, IDrawable
     {
         ////////////////////////////////////////////////////////////
         /// <summary>
@@ -261,7 +261,7 @@ namespace SFML.Graphics
         /// <param name="target">Render target to draw to</param>
         /// <param name="states">Current render states</param>
         ////////////////////////////////////////////////////////////
-        public void Draw(RenderTarget target, RenderStates states)
+        public void Draw(IRenderTarget target, RenderStates states)
         {
             RenderStates.MarshalData marshaledStates = states.Marshal();
 

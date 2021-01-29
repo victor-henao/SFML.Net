@@ -14,7 +14,7 @@ namespace SFML.Graphics
     /// See also the note on coordinates and undistorted rendering in SFML.Graphics.Transformable.
     /// </remarks>
     ////////////////////////////////////////////////////////////
-    public class Sprite : Transformable, Drawable
+    public class Sprite : Transformable, IDrawable
     {
         ////////////////////////////////////////////////////////////
         /// <summary>
@@ -152,7 +152,7 @@ namespace SFML.Graphics
         /// <param name="target">Render target to draw to</param>
         /// <param name="states">Current render states</param>
         ////////////////////////////////////////////////////////////
-        public void Draw(RenderTarget target, RenderStates states)
+        public void Draw(IRenderTarget target, RenderStates states)
         {
             states.Transform *= Transform;
             RenderStates.MarshalData marshaledStates = states.Marshal();

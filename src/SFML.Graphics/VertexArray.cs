@@ -10,7 +10,7 @@ namespace SFML.Graphics
     /// Define a set of one or more 2D primitives
     /// </summary>
     ////////////////////////////////////////////////////////////
-    public class VertexArray : ObjectBase, Drawable
+    public class VertexArray : ObjectBase, IDrawable
     {
         ////////////////////////////////////////////////////////////
         /// <summary>
@@ -167,7 +167,7 @@ namespace SFML.Graphics
         /// <param name="target">Render target to draw to</param>
         /// <param name="states">Current render states</param>
         ////////////////////////////////////////////////////////////
-        public void Draw(RenderTarget target, RenderStates states)
+        public void Draw(IRenderTarget target, RenderStates states)
         {
             RenderStates.MarshalData marshaledStates = states.Marshal();
 
